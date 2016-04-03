@@ -22,6 +22,7 @@ Route::get('/', function () {
 Route::get('category/{slug}', ['as'=>'frontend.article.getCat', 'uses'=>'ArticleController@getCat']);
 
 
+Route::get('{category}', ['as'=>'frontend.article.getList', 'uses'=>'ArticleController@getArticle']);
 Route::get('{slug}.html', ['as'=>'frontend.article.getList', 'uses'=>'ArticleController@getArticle']);
 
 Route::group(array('before' => 'auth'), function ()
